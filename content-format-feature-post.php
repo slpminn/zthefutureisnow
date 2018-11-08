@@ -4,13 +4,13 @@
 	<?php if ( isset( $breaking_news ) && $breaking_news == 1 ) : ?>
 		<div id="breakingNews" class="breaking-news mocked">
 			<div class="row">
-		  		<div class="col-4 col-sm-2 text-right breaking-left">
+		  		<div class="col-6 col-sm-4 col-md-3 text-right breaking-left">
 		  			<h2 class="responsive">
 		      			<span class="breaking-small">Breaking</span><br>
 		      			<span class="breaking-large">News</span>
 		    		</h2>
 		  		</div>
-		  		<div class="col-8 col-sm-10 breaking-right">
+		  		<div class="col-6 col-sm-8 col-md-9 breaking-right">
 		    		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s">', esc_url(get_permalink()) ),'</a></h2>'); ?>
 				    <!--  <button type="button" class="btn btn-danger btn-xs">Read More 
 				        <i class="glyphicon glyphicon-arrow-right"></i>

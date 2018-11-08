@@ -1,0 +1,20 @@
+  
+		Name: header.php
+		Description: Contains the code to display the main header.
+		Functions:
+			The script calls the funtion wp_head(); which loads the default scripts and the scripts defined in the zthefutureisnow_script_enqueue associated to the header.
+		Called by:
+			Function get_header();
+  --------------------------------------------------------
+		Name: footer.php
+		Description: Contains the code to display the main footer.
+		Functions:
+			The script calls the funtion wp_footer(); which loads the default scripts and the scripts defined in the zthefutureisnow_script_enqueue associated to the footer.
+		Called by:	
+			Function get_footer();
+--------------------------------------------------------
+		Name: single.php
+		Description: Overrides the default single post format form for Wordpress
+		We can have different single.php files per each format.
+		Ex:	single-aside.php, single-blog.php
+	

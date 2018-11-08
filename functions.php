@@ -152,5 +152,30 @@
 		==================================================	
 	 */
 	require get_template_directory() . '/inc/functions-posts-metaboxes.php';
+
+	 /*
+		==================================================
+			Include Walker file.
+		==================================================	
+	 */
+	require get_template_directory() . '/inc/walker.php';
+
+	 /*
+		==================================================
+			Head function.
+		==================================================	
+	 */
 	
+	function zthefutureisnow_remove_wp_version() {
+		return '';
+	}
+	add_filter( 'the_generator', 'zthefutureisnow_remove_wp_version' );	
+	//This filter tell wp to overide the version to display in the post header with blank other wise it will display: <meta name="generator" content="WordPress 4.9.8" />
+
+	/*
+		==================================================
+			Custom Post Type.
+		==================================================	
+	 */
+	require get_template_directory() . '/inc/custom-post-types.php';
  ?>

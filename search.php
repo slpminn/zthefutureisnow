@@ -31,6 +31,7 @@
 				echo '</div>';
 				/* End Pagination */		
 			endif; 
+			wp_reset_query();
 		?>
 	</div>
 	<div class="col-12 col-sm-4">	

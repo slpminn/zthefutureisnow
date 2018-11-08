@@ -1,12 +1,20 @@
+<?php /* 
+		Name: header.php
+		Description: Contains the code to display the main header.
+		Functions:
+			The script calls the funtion wp_head(); which loads the default scripts and the scripts defined in the zthefutureisnow_script_enqueue associated to the header.
+		Called:
+			Function get_header();
+*/ ?>
+
 <!doctype html>
-<html>
-	
+<html <?php language_attributes(); ?>>
 	<head>
 		
-		<meta charset="utf-8">
-	
-		<title>Z the future is now</title>
-	
+		<meta charset="<?php bloginfo( 'charset' ); ?>">
+		<title><?php bloginfo( 'name' ); ?> <?php wp_title('|'); //Only display when in a single posts.?></title>
+		<meta name="description" content="<? bloginfo( 'description'); ?>" />
+
 		<?php wp_head(); ?>
 	
 	</head>	
@@ -60,7 +68,8 @@
 									'menu_class' => 'navbar-nav mr-auto',
 									'add_li_class'  => 'nav-item',
 									'add_link_class'   => 'nav-link',
-									'depth' => 2,									
+									'depth' => 2,
+								/*	'walker' => new Walker_Nav_Primary() //Add the walker classes to the Nav */
 								)
 							);   
 						?> 
