@@ -39,15 +39,50 @@
 				'thumbnail',
 				'revision',
 			),
+		/*	// Assigns the default taxonomy of the posts.
 			'taxonomies' => array (
 				'category',
 				'post_tag'
-			),
+			), */
 			'menu_position' => 5,
 			'exclude_from_search' => false,	
 		);
 		register_post_type('portfolio',$args);
 	}
-	add_action('init','zthefutureisnow_custom_post_type'); 
+	add_action('init','zthefutureisnow_custom_post_type');
+
+	function zthefutureisnow_custom_taxonomies() {
+
+		// Add new taxonomy hierarchical
+		
+		$labels = array (
+			'name' => 'Types',
+			'singular_name' => 'Type',
+			'search_item' => 'Search Type',
+			'all_items' => 'All Types',
+			'parent_item' => 'Parent Type',
+			'parent_item_colon' => 'Parent Type:',
+			'edit_item' => 'Edit Type',
+			'update_item' => 'Update Type',
+			'add_new_item' => 'Add New Type',
+			'new_item_name' => 'New Type Name',
+			'menu_name' => 'Type of Work'
+		);
+
+		$args = array (
+
+			'hierarchical' => true,
+			'labels' => $labels,
+			'show_ui' => true,	//Show in the Admin interface
+			'show_admin_column' => true,
+			'query_var' => true,
+			'rewrite' => array ( 'slug' => 'type' )
+		);
+
+		register_taxonomy('type',array('portfolio'),$args);
+
+		// Add taxonomy non-hierarchical 
+	}
+	add_action('init','zthefutureisnow_custom_taxonomies'); 
 
 ?>

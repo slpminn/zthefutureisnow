@@ -1,5 +1,6 @@
 <?php 
-	
+	// flush_rewrite_rules( false );  //Fixes issues with pages not found.
+	// Accomplish the same by going to Setting=>Permalink=>change something=>save=>change back=>save
 	/*
 		==================================================
 			Include Scripts
