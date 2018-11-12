@@ -53,20 +53,20 @@
 
 	function zthefutureisnow_custom_taxonomies() {
 
-		// Add new taxonomy hierarchical
+		// Add the new taxonomy hierarchical "work" to the custom post type "porfolio"
 		
 		$labels = array (
-			'name' => 'Types',
-			'singular_name' => 'Type',
-			'search_item' => 'Search Type',
-			'all_items' => 'All Types',
-			'parent_item' => 'Parent Type',
-			'parent_item_colon' => 'Parent Type:',
-			'edit_item' => 'Edit Type',
-			'update_item' => 'Update Type',
-			'add_new_item' => 'Add New Type',
-			'new_item_name' => 'New Type Name',
-			'menu_name' => 'Type of Work'
+			'name' => 'Work',
+			'singular_name' => 'Work',
+			'search_item' => 'Search Work',
+			'all_items' => 'All Works',
+			'parent_item' => 'Parent Work',
+			'parent_item_colon' => 'Parent Work:',
+			'edit_item' => 'Edit Work',
+			'update_item' => 'Update Work',
+			'add_new_item' => 'Add New Work',
+			'new_item_name' => 'New Work Name',
+			'menu_name' => 'Work Type'
 		);
 
 		$args = array (
@@ -76,13 +76,28 @@
 			'show_ui' => true,	//Show in the Admin interface
 			'show_admin_column' => true,
 			'query_var' => true,
-			'rewrite' => array ( 'slug' => 'type' )
+			'rewrite' => array ( 'slug' => 'work' )
 		);
 
-		register_taxonomy('type',array('portfolio'),$args);
+		register_taxonomy('work',array('portfolio'),$args);
 
-		// Add taxonomy non-hierarchical 
+		// Add new taxonomy non-hierarchical (Tag List) "software" to the custom post type "portfolio"
+		// Strimline the creationg by skipping the $labels array.
+
+
+		$args1 = array (
+
+			'hierarchical' => false,
+			'label' => 'Software',
+			'show_admin_column' => true,
+			'rewrite' => array ( 'slug' => 'software' )
+
+		);
+
+		register_taxonomy('software','portfolio',$args1);		
+
+
 	}
-	add_action('init','zthefutureisnow_custom_taxonomies'); 
+ 	add_action('init','zthefutureisnow_custom_taxonomies'); 
 
 ?>
