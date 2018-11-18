@@ -22,23 +22,11 @@
 					echo "<small>";
 					// Custom Taxonomy can not be retrieve with the default functions to 
 					// get_categories() or get_tags()	
-					
-					$term_list_cat = wp_get_post_terms($post->ID, 'work');
-					$i = 0;	
-					foreach( $term_list_cat as $term ) {	
-						$i++;
-						if($i > 1) {echo ', ';}
-						echo $term->name;	
-					} 
-					
-					$term_list_tag = wp_get_post_terms($post->ID, 'software');					
-					if(count($term_list_cat) > 0 && count($term_list_tag) > 0) {echo ' | ';}
-					$i = 0;	
-					foreach( $term_list_tag as $term ) {	
-						$i++;
-						if($i > 1) {echo ', ';}
-						echo $term->name;	
-					} 
+					$returnCat = zthefutureisnow_get_custom_taxanomy($post->ID, 'work');
+					$returnTag = zthefutureisnow_get_custom_taxanomy($post->ID, 'software');
+					echo $returnCat;						
+					if (strlen($returnCat) > 0 && strlen($returnTag) > 0) echo " | ";
+					echo $returnTag;
 
 					echo ' ', edit_post_link(); 
 

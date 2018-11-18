@@ -179,4 +179,12 @@
 		==================================================	
 	 */
 	require get_template_directory() . '/inc/custom-post-types.php';
+
+	/*
+		==================================================
+			Custom Taxonomy.
+		==================================================	
+	 */
+	require get_template_directory() . '/inc/custom-taxanomy.php';
+
  ?>
