@@ -187,4 +187,16 @@
 	 */
 	require get_template_directory() . '/inc/custom-taxanomy.php';
 
+	/*
+		==================================================
+			Custom Query.
+		==================================================	
+	 */
+	
+	function custom_query_vars_filter($vars) {
+  		$vars[] = 'race';
+  		return $vars;
+	}
+	add_filter( 'query_vars', 'custom_query_vars_filter' );
+
  ?>
